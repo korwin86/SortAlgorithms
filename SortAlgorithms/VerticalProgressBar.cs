@@ -41,16 +41,16 @@ namespace VerticalProgressBar
 		{
 			InitializeComponent();
 
-            // ***** avoid flickering
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            this.SetStyle(ControlStyles.UserPaint, true);
-            this.SetStyle(ControlStyles.DoubleBuffer, true);
+			// ***** avoid flickering
+			this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+			this.SetStyle(ControlStyles.UserPaint, true);
+			this.SetStyle(ControlStyles.DoubleBuffer, true);
 
 			this.Name = "VerticalProgressBar";
 			this.Size = new Size(10, 120);
 		}
 
-        [Description( "VerticalProgressBar Maximum Value")]
+		[Description( "VerticalProgressBar Maximum Value")]
 		[Category( "VerticalProgressBar" )]
 		[RefreshProperties(RefreshProperties.All)]
 		public int Maximum
@@ -234,7 +234,7 @@ namespace VerticalProgressBar
 					return; // Cannot draw
 			}
 
-            height = (m_Value - m_Minimum) * this.Height / (m_Maximum - m_Minimum); // the bar height
+			height = (m_Value - m_Minimum) * this.Height / (m_Maximum - m_Minimum); // the bar height
 
 			if(m_Style == Styles.Solid)
 			{
@@ -255,7 +255,7 @@ namespace VerticalProgressBar
 
 			int blockheight = width * 3 / 4;        // The height of the block
 
-            if (blockheight <= -1) return; // make sure blockheight is larger than -1 in order not to have the infinite loop.
+			if (blockheight <= -1) return; // make sure blockheight is larger than -1 in order not to have the infinite loop.
 			
 			for(int currentpos = y; currentpos > valuepos_y; currentpos -= blockheight+1)
 			{
