@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SortAlgorithms
@@ -65,21 +66,7 @@ namespace SortAlgorithms
             DrawItems(items);
         }
 
-        private void BubbleSortBtn_Click(object sender, EventArgs e)
-        {
-            RefreshItems();
-
-            var bubble = new BubbleSort<SortedItem>(items);
-            bubble.CompareEvent += Bubble_CompareEvent;
-            bubble.SwopEvent += Bubble_SwopEvent;
-            var time = bubble.Sort();
-
-            TimeLbl.Text = "Время: " + time.Seconds;
-            SwopLbl.Text = "Количество обменов: " + bubble.SwopCount;
-            CompareLbl.Text = "Количество сравнений: " + bubble.ComparisonCount;
-        }
-
-        private void Bubble_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        private void Algorithm_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
             var temp = e.Item1.Number;
             e.Item1.SetPosition(e.Item2.Number);
@@ -87,11 +74,55 @@ namespace SortAlgorithms
             panel3.Refresh();
         }
 
-        private void Bubble_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        private void Algorithm_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
             e.Item1.SetColor(Color.Red);
             e.Item2.SetColor(Color.Green);
             panel3.Refresh();
+
+            Thread.Sleep(30);
+
+            e.Item1.SetColor(Color.Blue);
+            e.Item2.SetColor(Color.Blue);
+            panel3.Refresh();
+        }
+
+
+
+        private void BtnClick(AlgorithmBase<SortedItem> algorithm)
+        {
+            RefreshItems();
+
+            algorithm.CompareEvent += Algorithm_CompareEvent;
+            algorithm.SwopEvent += Algorithm_SwopEvent;
+            var time = algorithm.Sort();
+
+            TimeLbl.Text = "Время: " + time.Seconds;
+            CompareLbl.Text = "Количество сравнений: " + algorithm.ComparisonCount;
+            SwopLbl.Text = "Количество обменов: " + algorithm.SwopCount;
+        }
+
+        private void BubbleSortBtn_Click(object sender, EventArgs e)
+        {
+            var bubble = new BubbleSort<SortedItem>(items);
+            BtnClick(bubble);
+        }
+
+        private void CocktailSortBtn_Click(object sender, EventArgs e)
+        {
+            var cocktail = new CocktailSort<SortedItem>(items);
+            BtnClick(cocktail);
+        }
+        private void InsertSortBtn_Click(object sender, EventArgs e)
+        {
+            var insert = new InsertSort<SortedItem>(items);
+            BtnClick(insert);
+        }
+
+        private void ShellSortBtn_Click(object sender, EventArgs e)
+        {
+            var shell = new ShellSort<SortedItem>(items);
+            BtnClick(shell);
         }
     }
 }

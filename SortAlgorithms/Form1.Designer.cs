@@ -41,6 +41,9 @@
             this.TimeLbl = new System.Windows.Forms.Label();
             this.CompareLbl = new System.Windows.Forms.Label();
             this.SwopLbl = new System.Windows.Forms.Label();
+            this.CocktailSortBtn = new System.Windows.Forms.Button();
+            this.InsertSortBtn = new System.Windows.Forms.Button();
+            this.ShellSortBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -139,7 +142,7 @@
             // TimeLbl
             // 
             this.TimeLbl.AutoSize = true;
-            this.TimeLbl.Location = new System.Drawing.Point(12, 160);
+            this.TimeLbl.Location = new System.Drawing.Point(12, 171);
             this.TimeLbl.Name = "TimeLbl";
             this.TimeLbl.Size = new System.Drawing.Size(43, 13);
             this.TimeLbl.TabIndex = 6;
@@ -148,7 +151,7 @@
             // CompareLbl
             // 
             this.CompareLbl.AutoSize = true;
-            this.CompareLbl.Location = new System.Drawing.Point(12, 182);
+            this.CompareLbl.Location = new System.Drawing.Point(12, 193);
             this.CompareLbl.Name = "CompareLbl";
             this.CompareLbl.Size = new System.Drawing.Size(129, 13);
             this.CompareLbl.TabIndex = 6;
@@ -157,17 +160,50 @@
             // SwopLbl
             // 
             this.SwopLbl.AutoSize = true;
-            this.SwopLbl.Location = new System.Drawing.Point(12, 205);
+            this.SwopLbl.Location = new System.Drawing.Point(12, 216);
             this.SwopLbl.Name = "SwopLbl";
             this.SwopLbl.Size = new System.Drawing.Size(116, 13);
             this.SwopLbl.TabIndex = 6;
             this.SwopLbl.Text = "Количество обменов:";
             // 
+            // CocktailSortBtn
+            // 
+            this.CocktailSortBtn.Location = new System.Drawing.Point(96, 134);
+            this.CocktailSortBtn.Name = "CocktailSortBtn";
+            this.CocktailSortBtn.Size = new System.Drawing.Size(75, 23);
+            this.CocktailSortBtn.TabIndex = 7;
+            this.CocktailSortBtn.Text = "CocktailSort";
+            this.CocktailSortBtn.UseVisualStyleBackColor = true;
+            this.CocktailSortBtn.Click += new System.EventHandler(this.CocktailSortBtn_Click);
+            // 
+            // InsertSortBtn
+            // 
+            this.InsertSortBtn.Location = new System.Drawing.Point(177, 134);
+            this.InsertSortBtn.Name = "InsertSortBtn";
+            this.InsertSortBtn.Size = new System.Drawing.Size(75, 23);
+            this.InsertSortBtn.TabIndex = 8;
+            this.InsertSortBtn.Text = "InsertSort";
+            this.InsertSortBtn.UseVisualStyleBackColor = true;
+            this.InsertSortBtn.Click += new System.EventHandler(this.InsertSortBtn_Click);
+            // 
+            // ShellSortBtn
+            // 
+            this.ShellSortBtn.Location = new System.Drawing.Point(258, 134);
+            this.ShellSortBtn.Name = "ShellSortBtn";
+            this.ShellSortBtn.Size = new System.Drawing.Size(75, 23);
+            this.ShellSortBtn.TabIndex = 9;
+            this.ShellSortBtn.Text = "ShellSort";
+            this.ShellSortBtn.UseVisualStyleBackColor = true;
+            this.ShellSortBtn.Click += new System.EventHandler(this.ShellSortBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 236);
+            this.Controls.Add(this.ShellSortBtn);
+            this.Controls.Add(this.InsertSortBtn);
+            this.Controls.Add(this.CocktailSortBtn);
             this.Controls.Add(this.SwopLbl);
             this.Controls.Add(this.CompareLbl);
             this.Controls.Add(this.TimeLbl);
@@ -201,6 +237,9 @@
         private System.Windows.Forms.Label TimeLbl;
         private System.Windows.Forms.Label CompareLbl;
         private System.Windows.Forms.Label SwopLbl;
+        private System.Windows.Forms.Button CocktailSortBtn;
+        private System.Windows.Forms.Button InsertSortBtn;
+        private System.Windows.Forms.Button ShellSortBtn;
     }
 }
 
