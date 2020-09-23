@@ -28,8 +28,6 @@ namespace SortAlgorithms
             AddTextBox.Text = "";
         }
 
-
-
         private void FillButton_Click(object sender, EventArgs e)
         {
             if (int.TryParse(FillTextBox.Text, out int value))
@@ -103,8 +101,6 @@ namespace SortAlgorithms
 
             Thread.Sleep(20);
         }
-
-
 
         private void BtnClick(AlgorithmBase<SortedItem> algorithm)
         {

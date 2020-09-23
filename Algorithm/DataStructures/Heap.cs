@@ -6,19 +6,6 @@ namespace Algorithm.DataStructures
     public class Heap<T> : AlgorithmBase<T> where T : IComparable
     {
         public int Count => Items.Count;
-        //private int sortedCount = 0;
-
-        public T Peek()
-        {
-            if (Count > 0)
-            {
-                return Items[0];
-            }
-            else
-            {
-                throw new ArgumentNullException(nameof(Items), "Куча пуста");
-            }
-        }
 
         public Heap(IEnumerable<T> items)
         {
@@ -27,31 +14,6 @@ namespace Algorithm.DataStructures
             {
                 Sort(i);
             }
-        }
-
-        public void Add(T item)
-        {
-            Items.Add(item);
-
-            var currentIndex = Count - 1;
-            var parentIndex = GetParentIndex(currentIndex);
-
-            while (currentIndex > 0 && Compare(Items[parentIndex], Items[currentIndex]) == -1)
-            {
-                Swop(currentIndex, parentIndex);
-
-                currentIndex = parentIndex;
-                parentIndex = GetParentIndex(currentIndex);
-            }
-        }
-
-        public T GetMax()
-        {
-            var result = Items[0];
-            Items[0] = Items[Count - 1];
-            Items.RemoveAt(Count - 1);
-            Sort(0);            
-            return result;
         }
 
         private void Sort(int curentIndex, int maxLenght = -1)
@@ -84,11 +46,6 @@ namespace Algorithm.DataStructures
                 Swop(curentIndex, maxIndex);
                 curentIndex = maxIndex;
             }
-        }
-
-        private int GetParentIndex(int currentIndex)
-        {
-            return (currentIndex - 1) / 2;
         }
 
         protected override void MakeSort()
