@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Algorithm
 {
-    public class RadixSort<T> : AlgorithmBase<T> where T : IComparable
+    public class LsdRadixSort<T> : AlgorithmBase<T> where T : IComparable
     {
-        public RadixSort(IEnumerable<T> items) : base(items) { }
-        public RadixSort() { }
+        public LsdRadixSort(IEnumerable<T> items) : base(items) { }
+        public LsdRadixSort() { }
 
         protected override void MakeSort()
         {
