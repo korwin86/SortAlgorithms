@@ -157,5 +157,20 @@ namespace Algorithm.Tests
                 Assert.AreEqual(Sorted[i], gnome.Items[i]);
             }
         }
+
+        [TestMethod()]
+        public void RadixSortTest()
+        {
+            // arrange
+            var radix = new RadixSort<int>();
+            radix.Items.AddRange(Items);
+            // act
+            radix.Sort();
+            // assert
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], radix.Items[i]);
+            }
+        }
     }
 }
