@@ -19,7 +19,7 @@ namespace Algorithm.Tests
             Items.Clear();
             for (int i = 0; i < 10000; i++)
             {
-                Items.Add(rnd.Next(0, 100000));
+                Items.Add(rnd.Next(0, 1000000));
             }
             Sorted.Clear();
             Sorted.AddRange(Items.OrderBy(x => x).ToArray());
@@ -141,6 +141,21 @@ namespace Algorithm.Tests
             for (int i = 0; i < Items.Count; i++)
             {
                 Assert.AreEqual(Sorted[i], selection.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void GnomeSortTest()
+        {
+            // arrange
+            var gnome = new GnomeSort<int>();
+            gnome.Items.AddRange(Items);
+            // act
+            gnome.Sort();
+            // assert
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], gnome.Items[i]);
             }
         }
     }
