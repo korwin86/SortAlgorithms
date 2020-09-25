@@ -11,6 +11,7 @@ namespace SortAlgorithms
     public partial class Form1 : Form
     {
         List<SortedItem> items = new List<SortedItem>();
+        private const int sleep = 10;
 
         public Form1()
         {
@@ -71,20 +72,20 @@ namespace SortAlgorithms
             e.Item2.SetColor(Color.Brown);
             panel3.Refresh();
 
-            Thread.Sleep(20);
+            Thread.Sleep(sleep);
 
             var temp = e.Item1.Number;
             e.Item1.SetPosition(e.Item2.Number);
             e.Item2.SetPosition(temp);
             panel3.Refresh();
 
-            Thread.Sleep(20);
+            Thread.Sleep(sleep);
 
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
             panel3.Refresh();
 
-            Thread.Sleep(20);
+            Thread.Sleep(sleep);
         }
 
         private void AlgorithmCompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
@@ -93,13 +94,13 @@ namespace SortAlgorithms
             e.Item2.SetColor(Color.Green);
             panel3.Refresh();
 
-            Thread.Sleep(20);
+            Thread.Sleep(sleep);
 
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
             panel3.Refresh();
 
-            Thread.Sleep(20);
+            Thread.Sleep(sleep);
         }
 
         private void AlgorithmSetEvent(object sender, Tuple<int, SortedItem> e)
@@ -107,17 +108,17 @@ namespace SortAlgorithms
             e.Item2.SetColor(Color.Red);
             panel3.Refresh();
 
-            Thread.Sleep(20);
+            Thread.Sleep(sleep);
 
             e.Item2.SetPosition(e.Item1);
             panel3.Refresh();
 
-            Thread.Sleep(20);
+            Thread.Sleep(sleep);
 
             e.Item2.SetColor(Color.Blue);
             panel3.Refresh();
 
-            Thread.Sleep(20);
+            Thread.Sleep(sleep);
         }
 
         private void BtnClick(AlgorithmBase<SortedItem> algorithm)
@@ -204,6 +205,12 @@ namespace SortAlgorithms
         {
             var merge = new MergeSort<SortedItem>(items);
             BtnClick(merge);
+        }
+
+        private void QuickSortBtn_Click(object sender, EventArgs e)
+        {
+            var quick = new QuickSort<SortedItem>(items);
+            BtnClick(quick);
         }
     }
 }

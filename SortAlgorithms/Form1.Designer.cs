@@ -51,6 +51,7 @@
             this.LsdRadixSortBtn = new System.Windows.Forms.Button();
             this.MsdRadixSortBtn = new System.Windows.Forms.Button();
             this.MergeSortBtn = new System.Windows.Forms.Button();
+            this.QuickSortBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -133,7 +134,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Location = new System.Drawing.Point(339, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(676, 128);
+            this.panel3.Size = new System.Drawing.Size(652, 128);
             this.panel3.TabIndex = 4;
             // 
             // BubbleSortBtn
@@ -273,11 +274,22 @@
             this.MergeSortBtn.UseVisualStyleBackColor = true;
             this.MergeSortBtn.Click += new System.EventHandler(this.MergeSortBtn_Click);
             // 
+            // QuickSortBtn
+            // 
+            this.QuickSortBtn.Location = new System.Drawing.Point(906, 134);
+            this.QuickSortBtn.Name = "QuickSortBtn";
+            this.QuickSortBtn.Size = new System.Drawing.Size(70, 23);
+            this.QuickSortBtn.TabIndex = 17;
+            this.QuickSortBtn.Text = "QuickSort";
+            this.QuickSortBtn.UseVisualStyleBackColor = true;
+            this.QuickSortBtn.Click += new System.EventHandler(this.QuickSortBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 243);
+            this.ClientSize = new System.Drawing.Size(991, 243);
+            this.Controls.Add(this.QuickSortBtn);
             this.Controls.Add(this.MergeSortBtn);
             this.Controls.Add(this.MsdRadixSortBtn);
             this.Controls.Add(this.LsdRadixSortBtn);
@@ -331,6 +343,7 @@
         private System.Windows.Forms.Button LsdRadixSortBtn;
         private System.Windows.Forms.Button MsdRadixSortBtn;
         private System.Windows.Forms.Button MergeSortBtn;
+        private System.Windows.Forms.Button QuickSortBtn;
     }
 }
 
