@@ -11,11 +11,9 @@ namespace Algorithm
         protected override void MakeSort()
         {
             var minIndex = 0;
-
             for (int i = 0; i < Items.Count - 1; i++)
             {
                 minIndex = i;
-
                 for (int j = i + 1; j < Items.Count; j++)
                 {
                     if (Compare(Items[j], Items[minIndex]) == -1)
@@ -23,7 +21,6 @@ namespace Algorithm
                         minIndex = j;
                     }
                 }
-
                 if (i != minIndex)
                 {
                     Swop(i, minIndex);

@@ -20,9 +20,7 @@ namespace SortAlgorithms
             StartNumber = number;
             ProgressBar = new VerticalProgressBar.VerticalProgressBar();
             Label = new Label();
-
             var x = number * 20;
-
             // 
             // verticalProgressBar
             // 

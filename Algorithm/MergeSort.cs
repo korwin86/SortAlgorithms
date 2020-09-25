@@ -24,12 +24,9 @@ namespace Algorithm
             {
                 return items;
             }
-
             var mid = items.Count / 2;
-
             var left = items.Take(mid).ToList();
             var right = items.Skip(mid).ToList();
-
             return Merge(Sort(left), Sort(right));
         }
 
@@ -38,9 +35,7 @@ namespace Algorithm
             var length = left.Count + right.Count;
             var leftPointer = 0;
             var rightPointer = 0;
-
             var result = new List<T>(length);
-
             for (int i = 0; i < length; i++)
             {
                 if (leftPointer < left.Count && rightPointer < right.Count)
@@ -70,7 +65,6 @@ namespace Algorithm
                     }
                 }
             }
-
             return result;
         }
     }

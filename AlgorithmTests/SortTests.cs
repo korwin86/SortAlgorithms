@@ -104,7 +104,7 @@ namespace Algorithm.Tests
         public void TreeSortTest()
         {
             // arrange
-            var tree = new Tree<int>(Items);
+            var tree = new TreeSort<int>(Items);
             // act
             tree.Sort();
             // assert
@@ -118,7 +118,7 @@ namespace Algorithm.Tests
         public void HeapSortTest()
         {
             // arrange
-            var heap = new Heap<int>(Items);
+            var heap = new HeapSort<int>(Items);
             // act
             heap.Sort();
             // assert

@@ -10,7 +10,6 @@ namespace Algorithm
         protected override void MakeSort()
         {
             var step = Items.Count / 2;
-
             while (step > 0)
             {
                 for (int i = step; i < Items.Count; i++)
@@ -22,7 +21,6 @@ namespace Algorithm
                         j -= step;
                     }
                 }
-
                 step /= 2;
             }
 

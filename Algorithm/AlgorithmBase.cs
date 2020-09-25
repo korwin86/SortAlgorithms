@@ -39,7 +39,6 @@ namespace Algorithm
             if (position < Items.Count)
             {
                 SetEvent?.Invoke(this, new Tuple<int, T>(position, item));
-
                 Items[position] = item;
             }
         }
@@ -48,11 +47,9 @@ namespace Algorithm
         {
             var timer = new Stopwatch();
             SwopCount = 0;
-
             timer.Start();
             MakeSort();
             timer.Stop();
-
             return timer.Elapsed;
         }
 
@@ -60,6 +57,7 @@ namespace Algorithm
         {
             Items.Sort();
         }
+
         protected int Compare(T a, T b)
         {
             CompareEvent?.Invoke(this, new Tuple<T, T>(a, b));

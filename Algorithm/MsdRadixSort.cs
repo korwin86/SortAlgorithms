@@ -12,7 +12,6 @@ namespace Algorithm
         {
             int length = GetMaxLength(Items);
             var result = SortCollection(Items, length);
-
             for (int i = 0; i < result.Count; i++)
             {
                 Set(i, result[i]);
@@ -27,7 +26,6 @@ namespace Algorithm
             {
                 groups.Add(new List<T>());
             }
-
             // Распределение элементов по корзинам
             foreach (var item in collection)
             {
@@ -35,7 +33,6 @@ namespace Algorithm
                 var value = i % (int)Math.Pow(10, step + 1) / (int)Math.Pow(10, step);
                 groups[value].Add(item);
             }
-
             // Сборка элементов
             foreach (var group in groups)
             {
@@ -46,7 +43,6 @@ namespace Algorithm
                 }
                 result.AddRange(group);
             }
-
             return result;
         }
 
@@ -59,7 +55,6 @@ namespace Algorithm
                 {
                     throw new ArgumentException("Поразрядная сортировка поддерживает только целые числа (больше либо равно нуля)", nameof(Items));
                 }
-
                 // Не работает со значением item = 0, Даёт -inf
                 //var l = Convert.ToInt32(Math.Log10(item.GetHashCode()) + 1);
                 var l = item.GetHashCode().ToString().Length;

@@ -44,11 +44,10 @@
     <Compile Include="AlgorithmBase.cs" />
     <Compile Include="BubbleSort.cs" />
     <Compile Include="CocktailSort.cs" />
-    <Compile Include="DataStructures\Heap.cs" />
-    <Compile Include="DataStructures\Node.cs" />
-    <Compile Include="DataStructures\Tree.cs" />
-    <Compile Include="GnomeSort.cs" />
     <Compile Include="HeapSort.cs" />
+    <Compile Include="DataStructures\Node.cs" />
+    <Compile Include="TreeSort.cs" />
+    <Compile Include="GnomeSort.cs" />
     <Compile Include="InsertSort.cs" />
     <Compile Include="MergeSort.cs" />
     <Compile Include="MsdRadixSort.cs" />

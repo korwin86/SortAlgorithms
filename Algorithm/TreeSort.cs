@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace Algorithm.DataStructures
 {
-    public class Tree<T> : AlgorithmBase<T> where T : IComparable
+    public class TreeSort<T> : AlgorithmBase<T> where T : IComparable
     {
         private Node<T> Root { get; set; }
         public int Count { get; private set; }
 
-        public Tree() { }
+        public TreeSort() { }
 
-        public Tree(IEnumerable<T> items)
+        public TreeSort(IEnumerable<T> items)
         {
             var list = items.ToList();
             for (int i = 0; i < list.Count; i++)
@@ -32,7 +32,6 @@ namespace Algorithm.DataStructures
                 Count = 1;
                 return;
             }
-
             Add(Root, node);
             Count++;
         }
@@ -43,12 +42,10 @@ namespace Algorithm.DataStructures
             {
                 if (node.Left == null)
                 {
-
                     node.Left = newNode;
                 }
                 else
                 {
-
                     Add(node.Left, newNode);
                 }
             }
@@ -68,7 +65,6 @@ namespace Algorithm.DataStructures
         protected override void MakeSort()
         {
             var result = Inorder(Root).Select(r => r.Data).ToList();
-
             for (int i = 0; i < result.Count; i++)
             {
                 Set(i, result[i]);
@@ -84,17 +80,12 @@ namespace Algorithm.DataStructures
                 {
                     list.AddRange(Inorder(node.Left));
                 }
-
                 list.Add(node);
-
                 if (node.Right != null)
                 {
                     list.AddRange(Inorder(node.Right));
                 }
-
-
             }
-
             return list;
         }
 

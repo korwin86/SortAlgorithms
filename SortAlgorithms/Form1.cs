@@ -62,7 +62,6 @@ namespace SortAlgorithms
             {
                 item.Refresh();
             }
-
             DrawItems(items);
         }
 
@@ -173,7 +172,7 @@ namespace SortAlgorithms
 
         private void HeapSortBtn_Click(object sender, EventArgs e)
         {
-            var heap = new Heap<SortedItem>(items);
+            var heap = new HeapSort<SortedItem>(items);
             BtnClick(heap);
         }
 
@@ -185,7 +184,7 @@ namespace SortAlgorithms
 
         private void TreeSortBtn_Click(object sender, EventArgs e)
         {
-            var tree = new Tree<SortedItem>(items);
+            var tree = new TreeSort<SortedItem>(items);
             BtnClick(tree);
         }
 

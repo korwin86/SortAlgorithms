@@ -19,7 +19,6 @@ namespace Algorithm
             {
                 return;
             }
-
             var pivot = Sorting(left, right);
             Qsort(left, pivot - 1);
             Qsort(pivot + 1, right);
@@ -38,7 +37,6 @@ namespace Algorithm
                 }
             }
             Swop(pointer, right);
-
             return pointer;
         }
     }
