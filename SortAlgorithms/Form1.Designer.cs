@@ -50,6 +50,7 @@
             this.TreeSortBtn = new System.Windows.Forms.Button();
             this.LsdRadixSortBtn = new System.Windows.Forms.Button();
             this.MsdRadixSortBtn = new System.Windows.Forms.Button();
+            this.MergeSortBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -132,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Location = new System.Drawing.Point(339, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(614, 128);
+            this.panel3.Size = new System.Drawing.Size(676, 128);
             this.panel3.TabIndex = 4;
             // 
             // BubbleSortBtn
@@ -262,11 +263,22 @@
             this.MsdRadixSortBtn.UseVisualStyleBackColor = true;
             this.MsdRadixSortBtn.Click += new System.EventHandler(this.MsdRadixSortBtn_Click);
             // 
+            // MergeSortBtn
+            // 
+            this.MergeSortBtn.Location = new System.Drawing.Point(830, 134);
+            this.MergeSortBtn.Name = "MergeSortBtn";
+            this.MergeSortBtn.Size = new System.Drawing.Size(70, 23);
+            this.MergeSortBtn.TabIndex = 16;
+            this.MergeSortBtn.Text = "MergeSort";
+            this.MergeSortBtn.UseVisualStyleBackColor = true;
+            this.MergeSortBtn.Click += new System.EventHandler(this.MergeSortBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 236);
+            this.ClientSize = new System.Drawing.Size(1015, 243);
+            this.Controls.Add(this.MergeSortBtn);
             this.Controls.Add(this.MsdRadixSortBtn);
             this.Controls.Add(this.LsdRadixSortBtn);
             this.Controls.Add(this.TreeSortBtn);
@@ -318,6 +330,7 @@
         private System.Windows.Forms.Button TreeSortBtn;
         private System.Windows.Forms.Button LsdRadixSortBtn;
         private System.Windows.Forms.Button MsdRadixSortBtn;
+        private System.Windows.Forms.Button MergeSortBtn;
     }
 }
 
